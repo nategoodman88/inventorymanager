@@ -1,10 +1,17 @@
 import { RouteRecordRaw } from 'vue-router';
 
+const isAuthenticated = localStorage.getItem('isAuthenticated');
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '/home', component: () => import('pages/HomePage.vue') }],
+    children: [
+      { path: '/home', component: () => import('pages/HomePage.vue') },
+    ],
+    redirect: () => {
+      return isAuthenticated ? { path: '/home' } : { path: '/login' };
+    },
   },
 
   {

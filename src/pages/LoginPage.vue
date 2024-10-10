@@ -61,7 +61,8 @@ const login = async () => {
     password: password.value,
   });
 
-  if (response.status == 200) {
+  if (response.status === 200) {
+    localStorage.setItem('isAuthenticated', true);
     router.push('/home');
   } else {
     console.log('Invalid credentials! ' + response.status); //TODO: Change this to a banner or alert or something
