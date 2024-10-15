@@ -62,7 +62,8 @@ const login = async () => {
   });
 
   if (response.status === 200) {
-    localStorage.setItem('isAuthenticated', true);
+    localStorage.setItem('isAuthenticated', true); //TODO: Figure out a more secure way to handle this that still works with the Strapi API calls, but this is fine for local dev for now
+    localStorage.setItem('token', response.data.jwt);
     router.push('/home');
   } else {
     console.log('Invalid credentials! ' + response.status); //TODO: Change this to a banner or alert or something

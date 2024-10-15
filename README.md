@@ -1,6 +1,6 @@
 # Inventory Manager (inventorymanager)
 
-A inventory managment application built on Quasar and Strapi CMS, dockerized 
+Web Inventory Manager application, built on Quasar and Strapi CMS, dockerized
 
 ## Install the dependencies
 
@@ -14,4 +14,4 @@ npm install
 
 ```bash
 docker-compose up
-``
+```
